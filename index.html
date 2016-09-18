@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<!-- <script src="scripts/angular.min.js" type="text/javascript"></script> -->
+	<!-- angular.js is uncompressed version. In this we can get appropriate detailed error message & angular.min.js is compressed so error message are abstract -->
+
+	<script src="scripts/angular.js"></script>
+	<script src="scripts/script.js"></script>
+	<title>First Page</title>
+
+</head>
+<!-- if we apply "ng-app" directive on "Body tag" then it will be automatically applied to its childs-->
+<!-- we also need to specify name of our module to use controller -->
+<body >
+	
+	10+20 = {{10+20}}
+
+	<!-- "{{ }}"	this curly braces are called binding expression -->
+	<div ng-app="myModule"> 
+		<!-- fetching the name from POJO -->
+		{{{name:'David',age:'30'}.name}}
+
+		<!-- making array and fetching value at 2 index -->
+		{{['dam','ram','sam'][2]}}
+
+		<p ng-controller="myController_name">
+			First Name : {{ employee.firstName }}
+			</br>
+			Last Name : {{ employee.lastName }}
+			</br>
+
+			gender :{{employee.gender}};
+		</p>
+
+	</div>
+</body>
+</html>
