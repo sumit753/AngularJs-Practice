@@ -1,0 +1,26 @@
+<!-- ng repeat directive example -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="scripts/angular.js"></script>
+	<script src="scripts/script.js"></script>
+	<title>Day2.1</title>
+	
+</head>
+<body ng-app="myModule">
+	<div ng-controller = "ThirdController">
+		<!-- nesting of ng-repeat -->
+		<ul ng-repeat="country in countries">
+			<li>{{country.name}} index:
+					<!-- we can also acess the index  -->
+					{{ $index }} 
+				<ul ng-repeat="city in country.cities">
+					<li>{{city.name }} index : {{ $index }} parent Index : {{$parent.$index}}</li>
+				</ul>	
+			</li>
+
+		</ul>	
+	</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+ <!-- dataBinding Example -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<script src="scripts/angular.js"></script>
+ 	<script src="scripts/script.js"></script>
+ 	<title>Day 2 </title>
+ </head>
+ <body ng-app = "myModule">
+ 	<div ng-controller = "SecondController">
+ 		<table>
+ 		<tr>
+ 			<td>Country Name</td>
+ 			<td><input type="text" ng-model="desh.Name"></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Capital</td>
+ 			<td><input type="text" ng-model="desh.capital"></td>
+ 		</tr>
+ 	    
+ 	    <!-- "createdFromView" atribute will be create in model -->
+ 		<tr>
+ 			<td>Created From View</td>
+ 			<td><input type="text" ng-model="createdFromView"></td>
+ 		</tr>
+ 	</table>
+
+ 	<!-- ======= Following Data Retrieved From Model======= -->
+ 	<table>
+ 		<tr>
+ 			<td>Country Name</td>
+ 			<td>{{desh.Name}}</td>
+ 		</tr>
+ 		<tr>
+ 			<td>Capital</td>
+ 			<td>{{desh.capital}}</td>
+ 		</tr>
+ 		<tr>
+ 			<td>Created From View</td>
+ 			<td>{{createdFromView}}</td>
+ 		</tr>
+ 	</table>
+ 	</div>
+ 	
+ </body>
+ </html>
