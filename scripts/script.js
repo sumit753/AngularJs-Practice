@@ -75,5 +75,16 @@ myApp.controller("myController_name",myController);
 						}
 
 	});
+// ###controller for filter Example
+	myApp.controller("fifthController",function($scope){
+		var people = [
+							{	name:"Ram",	gender : "male", dob : new Date("November 23,1989") ,salary : 10500 },
+							{	name:"Shayam",gender :"male",dob:new Date("December 24,1990"), salary : 15000.25 },
+							{	name:"Tom",	gender :"male",dob:new Date("March 24,1990"), salary : 151000.256 },
+							{	name:"Roma",gender :"female",dob:new Date("February 30,1987"), salary : 12000 },
+							{	name:"Sheela",	gender :"female",dob:new Date("May 24,1992"), salary : 80000 }
+						];
 
-	
+						$scope.people = people;
+						$scope.rowLimit = 3 ;
+	});
