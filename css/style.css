@@ -1,4 +1,4 @@
-body {
+ body {
   background: url(bg.png);
   font-family: "Quando", serif; }
 
@@ -47,6 +47,10 @@ table {
   margin: 0 auto;
   border: 5px solid #cdcbc6; }
 
+th{
+  cursor: pointer;
+}
+
 td {
   padding: 10px; }
   td:nth-child(1) {
@@ -79,5 +83,25 @@ tr {
   tr:first-child {
     background-color: white;
     font-weight: bold; }
+
+  .arrow-down{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid black;
+     display: inline-block;
+  
+  }
+
+  .arrow-up{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid black;
+    /*to display the arrow adjacent to column name*/
+    display: inline-block;
+  }
 
 /*# sourceMappingURL=style.css.map */

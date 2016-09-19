@@ -1,0 +1,35 @@
+<!-- SortBy Clicking On Column Tab example -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SortBy Clicking On Column</title>
+	<script src="scripts/angular.js" ></script>
+	<script src="scripts/script.js"></script>	
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body ng-app="myModule">	
+	
+	<table ng-controller="seventhController">
+		<h1>SortBy Example</h1>
+		<tbody >
+			
+			<tr>
+				<th ng-click="sortData('name')" >Name <div ng-class="getSortClass('name')"></div> </th>
+				<th ng-click="sortData('gender')" >Gender <div ng-class="getSortClass('gender')"></th>
+				<th ng-click="sortData('dob')" >Date Of birth <div ng-class="getSortClass('dob')"></th>
+				<th ng-click="sortData('salary')" >Salary<div ng-class="getSortClass('salary')"> </th>
+
+			</tr>
+			<tr ng-repeat="individual in AamAdmi | orderBy:sortColumn : reverseSort">
+				<td>{{ individual.name | uppercase }}</td>
+				<td>{{ individual.gender | lowercase }}</td>
+				<td>{{ individual.dob | date:"dd/MM/yyyy" }}</td>
+				<td>{{ individual.salary | currency:"$" : 2 }}</td>
+			</tr>
+
+		</tbody>
+	</table>
+	<!-- </div>	 -->
+</body>
+</html>

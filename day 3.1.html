@@ -1,0 +1,46 @@
+<!-- sort by example -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sort By Example</title>
+	<script src="scripts/angular.js" ></script>
+	<script src="scripts/script.js"></script>	
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body ng-app="myModule2">	
+	<!-- <div ng-controller="sixthController"> -->
+	<table ng-controller="sixthController">
+		<h1>SortBy Example</h1>
+		<tbody >
+			<tr>
+				<td>
+					<select ng-model="sortColumn">
+						<option value="name">Name [Asc]</option>
+						<option value="salary">Salary [Asc]</option>
+						<option value="dob">Date Of Birth [Asc]</option>
+						<option value="-name">Name [Dsc]</option>
+						<option value="-salary">Salary [Dsc]</option>
+					</select>
+				</td>
+			</tr>	
+
+			<tr>
+				<th>Name </th>
+				<th>Gender</th>
+				<th>Date Of birth</th>
+				<th>Salary</th>
+
+			</tr>
+			<tr ng-repeat="individual in AamAdmi | orderBy:sortColumn">
+				<td>{{ individual.name | uppercase }}</td>
+				<td>{{ individual.gender | lowercase }}</td>
+				<td>{{ individual.dob | date:"dd/MM/yyyy" }}</td>
+				<td>{{ individual.salary | currency:"$" : 2 }}</td>
+			</tr>
+
+		</tbody>
+	</table>
+	<!-- </div>	 -->
+</body>
+</html>
