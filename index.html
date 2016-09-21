@@ -13,12 +13,12 @@
 </head>
 <!-- if we apply "ng-app" directive on "Body tag" then it will be automatically applied to its childs-->
 <!-- we also need to specify name of our module to use controller -->
-<body >
+<body ng-app="myModule">
 	
 	10+20 = {{10+20}}
 
 	<!-- "{{ }}"	this curly braces are called binding expression -->
-	<div ng-app="myModule"> 
+	<div > 
 		<!-- fetching the name from POJO -->
 		{{{name:'David',age:'30'}.name}}
 
@@ -31,9 +31,24 @@
 			Last Name : {{ employee.lastName }}
 			</br>
 
-			gender :{{employee.gender}};
+			gender :{{employee.gender}}
 		</p>
+	</div>
+		</br>
+		<h2>ng-src Example </h2>
+		<div ng-controller="SecondController">
+		Country Name : {{ desh.countryName}}		
+		</br>
+		Capital : {{desh.capital}}
+		</br>
+		<img ng-src="{{ desh.flag }}" style= "height:100px ; width: 100px" alt="{{ country.countryName + 'FLAG' }}" />
+		</br>
+	</div>
 
+	<div ng-controller = "ThirdController">
+		<ul ng-repeat="country in countries">
+			<li>{{country.name}}</li>
+		</ul>	
 	</div>
 </body>
 </html>

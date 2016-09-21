@@ -1,0 +1,32 @@
+<!-- custom filter example -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Custom filters</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="scripts/angular.js"></script>
+	<script src="scripts/script.js"></script>
+	<script src="scripts/filter.js"></script>
+</head>
+<body ng-app="myModule">
+	<h1>Custom Filters with hide and show </h1>
+	<table ng-controller="customFilterController">
+		<tr><td><input type="checkbox" ng-model="hideShowToggle">Hide City</td></tr>
+		<tr>
+			<th>Name</th>
+			<th>Gender</th>
+			<th ng-hide="hideShowToggle">City</th>
+			<th ng-show="hideShowToggle">City</th>
+		</tr>
+		<tr ng-repeat="employee in employees">
+			<td>{{ employee.name }}</td>
+			<td>{{ employee.gender | gender }}</td>
+			<td ng-hide="hideShowToggle">{{ employee.city }}</td>
+			<td ng-show="hideShowToggle">######</td>
+
+		</tr>
+		
+	</table>					
+</body>
+</html>

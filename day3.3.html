@@ -1,0 +1,44 @@
+<!-- sort by example -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Filter Example</title>
+	<script src="scripts/angular.js" ></script>
+	<script src="scripts/script.js"></script>	
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body ng-app="myModule2">	
+	<!-- <div ng-controller="sixthController"> -->
+	<table ng-controller="sixthController">
+		<h1>Filter Example</h1>
+		<tbody >
+			<tr>
+				<!-- this will search all the columns  -->
+				<td><input type="text" placeholder="Search" ng-model="searchText.name"></td> 
+				<td> <input type="checkbox" ng-model="exactMatch"/> Exact Match	</td>
+				<!-- this is used apply filter on particular column -->
+				<!-- <td><input type="text" placeholder="Search" ng-model="searchText.gender"></td> -->
+
+			</tr>	
+
+			<tr>
+				<th>Name </th>
+				<th>Gender</th>
+				<th>Date Of birth</th>
+				<th>Salary</th>
+
+			</tr>
+			<!-- Note**-- Exact match does'nt work with UPPERCASE condition -->
+			<tr ng-repeat="individual in AamAdmi | filter:searchText:exactMatch" >
+				<td>{{ individual.name }}</td>
+				<td>{{ individual.gender | lowercase }}</td>
+				<td>{{ individual.dob | date:"dd/MM/yyyy" }}</td>
+				<td>{{ individual.salary | currency:"$" : 2 }}</td>
+			</tr>
+
+		</tbody>
+	</table>
+	<!-- </div>	 -->
+</body>
+</html>

@@ -1,0 +1,40 @@
+ <!-- Filter Example -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<script src="scripts/angular.js"></script>
+ 	<script src="scripts/script.js"></script>
+
+ 	<link rel="stylesheet" href="css/style.css">
+ 	<title>Event Handling</title>
+ </head>
+ <body ng-app="myModule">
+ 	<h1>Filter Example</h1>
+ 	
+ 	<table>
+ 		
+
+ 		<tbody ng-controller="fifthController">
+ 			<tr><td colspan="5" align="center">Rows to Display : <input type="number" step = "1" min="0" max="5" ng-model="rowLimit"/></td></tr>
+
+ 			<tr>
+ 				<th>Name </th>
+ 				<th>Gender</th>
+ 				<th>Date Of birth</th>
+ 				<th>Salary</th>
+ 				<th>Salary(Currency Filter)</th>
+ 				
+ 			</tr>
+ 			<tr ng-repeat = "individual in people | limitTo:rowLimit">
+ 				<td>{{ individual.name | uppercase }} </td>
+ 				<td>{{ individual.gender | lowercase }} </td>
+ 				<td>{{ individual.dob  | date:"dd/MM/yyyy" }}</td>
+ 				<td>{{ individual.salary | number:2 }} </td>
+ 				<td>{{ individual.salary | currency : "$":1 }} </td>
+ 				
+ 			</tr>
+ 		</tbody>
+ 	</table>
+ </body>
+ </html>
